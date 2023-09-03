@@ -76,3 +76,106 @@
 //     }
 // }
 // gigi.func(10,20)
+// ===========================function=======================
+// type FuncType = (n:number,m:number,l?:number) => number;  //making the parameter optional
+// const func:FuncType = (n,m,l) => {
+//     if(typeof l === "undefined") return n*m
+//     return n*m*l;
+// }
+// func(25,29)
+//making the default value of a parameter
+// type FuncType = (n:number,m:number,l?:number) => number; 
+// const func:FuncType = (n,m,l=20) => {
+//     return n*m*l;
+// }
+// func(25,29)
+// ================REST Oprator ======================
+// type FuncType = (n:number,m:number,l:number) => number;
+// const func = (...m:number[]) => {
+//         return m
+// }
+// func(26,32,32,43,87);
+// ==============Function with Object================
+// interface Product {          //also can create with interface
+//     name:string,
+//     stock:number,
+//     price:number,
+//     photo:string,
+//     readonly id:string
+// }
+// type GetDataType = (product:Product) => void
+// const getData:GetDataType =(product) =>
+// console.log(product)
+// const productOne:Product = {
+//     name : "laptop",
+//     stock:123,
+//     price:20000,
+//     photo: "sample pic",
+//     id:"18228282828282"
+// }
+// getData(productOne)
+// =============Never Type============= 
+// const errorHandler = () => {
+//     throw new Error()             //if we use the throw keyword it return the never datatype if use return then not
+// }
+// =============Classes==============
+// class Player {
+//      private hieght:number;
+//     wight:number;
+//     constructor(hieght:number,wight:number){
+//             this.hieght = hieght;
+//             this.wight = wight;
+//     }
+//     getHieght = () => {         //bt this method wo can access the private varibales ouside the class
+//         return this.hieght
+//     }
+// }
+// const player1 = new Player(12,34)
+// console.log(player1.getHieght())
+//=======short syntax==========
+// class Player {
+//     constructor(private hight:number, public wight:number,protected power:number){}  //protcted varibales can be accesed in the sub class
+//     getmyhight = () =>{
+//        return this.hight
+//     }
+// }
+// //===========extend the class and use of protected variable==========
+// const aimal = new Player(22,34,56)
+// console.log(aimal.getmyhight())
+// class Player2 extends Player{
+//     spical:boolean
+//     constructor(hight:number,wight:number,power:number,spical:boolean){
+//         super(hight,wight,power)
+//         this.spical = spical
+//     }
+//     getpower = () => {
+//         return this.power
+//     }
+// }
+// const myData = new Player2(123,432,543,true)
+// console.log(myData.getpower())
+// =====geter and seter function =========
+// class Player {
+//     constructor( private hight:number,public wight:number){
+//     }
+//     get myhight(){
+//         return this.hight
+//     }
+//     set changehight(val:number){
+//             this.hight = val;
+//     }
+// }
+// const my = new Player(12,34)
+// console.log(my.myhight)
+// my.changehight = 100
+// console.log(my.myhight)
+// =============type asyetion ============
+//===============DOM========================
+// typescript can not underdtand the DOM so we tell the typescript what are the element they are 
+// const btn = document.getElementById("btn") as HTMLElement  //method 1
+// btn.onclick
+// const btn = document.getElementById("btn")!  //method 2   here we specify that this is not a not value so it would be a html
+// btn.onclick
+// getting the image and src 
+var img = document.querySelector("#img");
+img.src;
